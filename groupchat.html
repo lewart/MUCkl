@@ -163,7 +163,7 @@ function submitClicked() {
 }
 
 function partRoom() {
-  if (confirm('Are you sure you want to leave this chat room?'))
+  if (confirm('Czy na pewno chcesz opuścić czat?'))
     if (parent.document.referrer)
       return parent.location.replace(parent.document.referrer);
     else
@@ -451,7 +451,7 @@ function init() {
       }
   }
   if (!have_logo)
-    document.getElementById('room_name').innerHTML = group.substring(0,group.indexOf('@'));
+    document.getElementById('room_name').innerHTML = 'Witamy na czacie';
 
   // toggle sound for init
   parent.playSounds = !parent.playSounds;
@@ -554,12 +554,12 @@ function msgboxKeyDown(el,e) {
       el.focus(); el.select();
     }
     break;
-  case 76:
-    if (e.ctrlKey) {   // ctrl+l
+/*  case 76:
+    if (e.ctrlLeft) {   // ctrl+l
       cFrame.body.innerHTML = '';
       return false;
     }
-    break;
+    break;*/
   }
   return true;
 }
@@ -583,8 +583,8 @@ onunload = part;
               href="http://www.jabber.org" target="_new"><img
                 src="images/jabber-powered.gif" width=232 height=38
                 alt="Jabber Powered" border=0 align=right></a><span
-              id="room_name" title="This Room's Name"></span><br><span
-              class="room_topic" title="This Room's Topic">Topic:
+              id="room_name" title="Nazwa tego pokoju"></span><br><span
+              class="room_topic" title="Temat tego pokoju">Temat:
               <span id="room_topic"></span></span></td>
         </tr>
         <tr>
@@ -682,7 +682,7 @@ onunload = part;
                       onKeyPress="return msgboxKeyPressed(this,event);"
                       onKeyDown="return msgboxKeyDown(this,event);"
                       onFocus="clearOnFirstFocus(this);"
-                      value="Click here to start writing!"></td>
+                      value="Kliknij aby zacząć pisać!"></td>
                   <td><img src="images/border_right.gif" height="100%"
                       width=8></td>
                 </tr>
@@ -709,25 +709,22 @@ onunload = part;
                             </label><select id="status_selector"
                               onChange="setStatus(this);">
                               <option value="available"
-                                class="user_available">Online</option>
+                                class="user_available">Dostępny</option>
                               <option value="chat"
-                                class="user_chat">Free for
-                                Chat</option>
+                                class="user_chat">Porozmawiajmy</option>
                               <option value="away"
-                                class="user_away">Away</option>
-                              <option value="xa" class="user_xa">Not
-                                Available</option>
-                              <option value="dnd" class="user_dnd">Do
-                                not Disturb</option>
+                                class="user_away">Zaraz wracam</option>
+                              <option value="xa" class="user_xa">Niedostępny</option>
+                              <option value="dnd" class="user_dnd">Nie przeszkadzać</option>
                               <!--option value="offline" class="user_unavailable">Offline</option-->
                             </select></td><td width="100%"
                                             style="padding-left:
                                             4px;"><input type="text"
                               id="status_message" style="width:100%;"
                               onChange="setStatusMessage(this);"
-                              title="Enter a Status Message"
+                              title="Twój status"
                               onFocus="clearOnFirstFocus(this);"
-                              value="Enter your status message here!"></td></tr></table></td>
+                              value="Wpisz swój status tutaj"></td></tr></table></td>
                   <td style="padding-right:6px;" align=right><img
                       src="images/stock_volume.png" width=16 height=16
                       id="toggle_sound_button" alt="Sound"
@@ -735,9 +732,8 @@ onunload = part;
                       onClick="toggleSound(this);"
                       class='actionButton'><span
                       class='spacer'></span><img
-                      src="images/stock_exit_16.png" alt="Exit"
-                      width=16 height=16 align=middle title="Leave
-                      Chat Room" onClick="return partRoom();"
+                      src="images/stock_exit_16.png" alt="Wyjście"
+                      width=16 height=16 align=middle title="Wyjdź z pokoju" onClick="return partRoom();"
                       class='actionButton'></td>
                 </tr>
             </table>
