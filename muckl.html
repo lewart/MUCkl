@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -426,7 +426,7 @@ function handlePresence(presence) {
       // show join message
       var aMessage = new JSJaCMessage();
       aMessage.setFrom(user.jid);
-      aMessage.setBody(ouser.name+" has become available");
+      aMessage.setBody(ouser.name+" jest dostępny");
       user.chatmsgs = user.chatmsgs.concat(aMessage);
       if (user.chatW && !user.chatW.closed && user.chatW.popMsgs)
         user.chatW.popMsgs();
@@ -437,7 +437,7 @@ function handlePresence(presence) {
       // show part message
       var aMessage = new JSJaCMessage();
       aMessage.setFrom(user.jid);
-      var body = ""+ouser.name+" has left";
+      var body = ""+ouser.name+" wyszedł z pokoju";
       if (presence.getStatus())
         body += ": " + presence.getStatus();
       aMessage.setBody(body);
@@ -711,6 +711,6 @@ onunload = logout;
     <frame src="empty.html" name="jwc_sound" marginwidth="0" marginheight="0" onLoad="soundLoaded();" />
   </frameset>
   <body>
-    Your browser must support frames and javascript to use this application.
+    Twoja przeglądarka internetowa musi obsługiwać ramki oraz javascript abyś mógł używać tej aplikacji.
   </body>
 </html>
