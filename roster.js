@@ -284,7 +284,10 @@ function printRoster() {
     
     var rosterGroupHeadClass = (this.usersHidden && this.groups[i].onlUserCount == 0 && this.groups[i].messagesPending == 0) ? 'rosterGroupHeaderHidden':'rosterGroupHeader';
     rosterHTML += "<div id='"+this.groups[i].name+"Head' class='"+rosterGroupHeadClass+"'><nobr>";
-    rosterHTML += this.groups[i].onlUserCount+"&nbsp;"+this.groups[i].name;
+    if(this.groups[i].name == 'participants')
+        rosterHTML += this.groups[i].onlUserCount+"&nbsp;uczestników";
+    else
+        rosterHTML += this.groups[i].onlUserCount+"&nbsp;"+this.groups[i].name;
     
     rosterHTML += "</nobr></div>";
     var rosterGroupClass = ((this.usersHidden && this.groups[i].onlUserCount == 0 && this.groups[i].messagesPending == 0) || this.hiddenGroups[this.groups[i].name])?'hidden':'rosterGroup';
