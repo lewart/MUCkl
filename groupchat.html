@@ -164,10 +164,11 @@ function submitClicked() {
 
 function partRoom() {
   if (confirm('Czy na pewno chcesz opuścić czat?'))
-    if (parent.document.referrer)
+      top.parent.window.close();
+/*    if (parent.document.referrer)
       return parent.location.replace(parent.document.referrer);
     else
-      return parent.location.replace('index.html');
+      return parent.location.replace('index.html');*/
 }
 
 var colors = new Array('maroon','green','olive','navy','purple','teal','red','blue');
@@ -730,11 +731,11 @@ onunload = part;
                       id="toggle_sound_button" alt="Sound"
                       align=middle title="Toggle Sound"
                       onClick="toggleSound(this);"
-                      class='actionButton'><span
+                      class='actionButton'><!-- <span
                       class='spacer'></span><img
                       src="images/stock_exit_16.png" alt="Wyjście"
                       width=16 height=16 align=middle title="Wyjdź z pokoju" onClick="return partRoom();"
-                      class='actionButton'></td>
+                      class='actionButton'> --></td>
                 </tr>
             </table>
           </td>
